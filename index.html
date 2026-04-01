@@ -1,0 +1,1800 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rachmaninoff Prelude Op. 23 No. 2 — Technique & Fingering Guide</title>
+  <style>
+    :root {
+      --bg: #0f0c0a;
+      --surface: #1a1410;
+      --surface2: #221a14;
+      --border: #3a2a1a;
+      --gold: #c9a14a;
+      --gold-light: #e8c87a;
+      --crimson: #8b1a2a;
+      --crimson-light: #c0394d;
+      --cream: #f0e8d8;
+      --cream-dim: #b8a890;
+      --white: #fff8f0;
+      --accent-blue: #4a7fa0;
+      --green: #4a8060;
+      --font-serif: 'Georgia', 'Times New Roman', serif;
+      --font-sans: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--cream);
+      font-family: var(--font-sans);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(160deg, #1a0a0a 0%, #0a0808 40%, #0f0c18 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 70px 40px 60px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 50% 0%, rgba(139,26,42,0.18) 0%, transparent 70%);
+    }
+    .hero-ornament {
+      font-size: 2rem;
+      color: var(--gold);
+      letter-spacing: 0.4em;
+      margin-bottom: 20px;
+      opacity: 0.7;
+    }
+    .hero h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 5vw, 3.6rem);
+      color: var(--white);
+      font-weight: normal;
+      letter-spacing: 0.04em;
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+    .hero h1 em {
+      color: var(--gold-light);
+      font-style: normal;
+    }
+    .hero-sub {
+      font-family: var(--font-serif);
+      font-size: 1.1rem;
+      color: var(--cream-dim);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 28px;
+    }
+    .hero-badges {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 36px;
+    }
+    .badge {
+      background: rgba(201,161,74,0.12);
+      border: 1px solid rgba(201,161,74,0.35);
+      color: var(--gold-light);
+      border-radius: 20px;
+      padding: 5px 14px;
+      font-size: 0.82rem;
+      letter-spacing: 0.06em;
+    }
+    .hero-desc {
+      max-width: 680px;
+      margin: 0 auto;
+      color: var(--cream-dim);
+      font-size: 1.02rem;
+      line-height: 1.8;
+    }
+
+    /* ── NAV ── */
+    nav {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      gap: 0;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .nav-inner::-webkit-scrollbar { display: none; }
+    nav a {
+      color: var(--cream-dim);
+      text-decoration: none;
+      padding: 14px 20px;
+      font-size: 0.85rem;
+      letter-spacing: 0.05em;
+      white-space: nowrap;
+      border-bottom: 2px solid transparent;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    nav a:hover, nav a.active {
+      color: var(--gold-light);
+      border-bottom-color: var(--gold);
+    }
+
+    /* ── LAYOUT ── */
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    section {
+      padding: 70px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 10px;
+    }
+    h2 {
+      font-family: var(--font-serif);
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: normal;
+      color: var(--white);
+      margin-bottom: 28px;
+      line-height: 1.25;
+    }
+    h3 {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      font-weight: normal;
+      color: var(--gold-light);
+      margin-bottom: 14px;
+    }
+    p { margin-bottom: 16px; color: var(--cream); }
+    p:last-child { margin-bottom: 0; }
+
+    /* ── PIECE OVERVIEW ── */
+    .overview-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-top: 36px;
+    }
+    @media (max-width: 700px) { .overview-grid { grid-template-columns: 1fr; } }
+    .info-card {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 24px;
+    }
+    .info-card h4 {
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 10px;
+    }
+    .info-card p { color: var(--cream-dim); font-size: 0.95rem; }
+
+    /* ── STRUCTURE MAP ── */
+    .structure-map {
+      display: flex;
+      gap: 0;
+      margin: 36px 0;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+    .struct-block {
+      flex: 1;
+      padding: 20px 14px;
+      text-align: center;
+      position: relative;
+      border-right: 1px solid var(--border);
+      cursor: default;
+      transition: background 0.2s;
+    }
+    .struct-block:last-child { border-right: none; }
+    .struct-block.a { background: rgba(139,26,42,0.25); }
+    .struct-block.b { background: rgba(74,128,96,0.2); }
+    .struct-block.dev { background: rgba(74,127,160,0.2); }
+    .struct-block.coda { background: rgba(201,161,74,0.15); }
+    .struct-block:hover { filter: brightness(1.25); }
+    .struct-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--cream-dim);
+      margin-bottom: 6px;
+    }
+    .struct-name {
+      font-family: var(--font-serif);
+      font-size: 1rem;
+      color: var(--white);
+    }
+    .struct-mm {
+      font-size: 0.75rem;
+      color: var(--cream-dim);
+      margin-top: 4px;
+    }
+    .struct-char {
+      font-size: 0.78rem;
+      color: var(--cream-dim);
+      margin-top: 8px;
+      font-style: italic;
+    }
+    @media (max-width: 650px) {
+      .structure-map { flex-direction: column; }
+      .struct-block { border-right: none; border-bottom: 1px solid var(--border); }
+    }
+
+    /* ── TABS ── */
+    .tabs-wrap { margin-bottom: 32px; }
+    .tabs {
+      display: flex;
+      gap: 0;
+      border-bottom: 1px solid var(--border);
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .tabs::-webkit-scrollbar { display: none; }
+    .tab-btn {
+      background: none;
+      border: none;
+      color: var(--cream-dim);
+      padding: 12px 22px;
+      font-size: 0.88rem;
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      white-space: nowrap;
+      transition: color 0.2s, border-color 0.2s;
+      font-family: var(--font-sans);
+      letter-spacing: 0.04em;
+    }
+    .tab-btn.active {
+      color: var(--gold-light);
+      border-bottom-color: var(--gold);
+    }
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
+
+    /* ── FINGERING CARDS ── */
+    .fingering-section {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 28px;
+      margin-bottom: 24px;
+    }
+    .fingering-section h3 {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .section-tag {
+      background: var(--crimson);
+      color: var(--white);
+      font-size: 0.7rem;
+      padding: 2px 10px;
+      border-radius: 10px;
+      letter-spacing: 0.08em;
+      font-family: var(--font-sans);
+    }
+    .difficulty-bar {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+    .difficulty-label { font-size: 0.78rem; color: var(--cream-dim); }
+    .dots {
+      display: flex;
+      gap: 4px;
+    }
+    .dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--border);
+    }
+    .dot.filled { background: var(--gold); }
+
+    /* Fingering diagram */
+    .finger-diagram {
+      background: #0f0c08;
+      border: 1px solid #3a2a1a;
+      border-radius: 8px;
+      padding: 20px 24px;
+      margin: 16px 0;
+      font-family: 'Courier New', monospace;
+      font-size: 0.88rem;
+      overflow-x: auto;
+    }
+    .finger-diagram .hand-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 8px;
+    }
+    .finger-diagram .notes {
+      color: var(--cream);
+      letter-spacing: 0.05em;
+    }
+    .finger-diagram .fingering {
+      color: var(--gold-light);
+      letter-spacing: 0.05em;
+    }
+    .finger-diagram .bar {
+      color: #555;
+    }
+
+    /* ── TIPS GRID ── */
+    .tips-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+      margin-top: 24px;
+    }
+    .tip-card {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 22px;
+      border-left: 3px solid var(--gold);
+    }
+    .tip-icon {
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+    }
+    .tip-card h4 {
+      font-family: var(--font-serif);
+      font-size: 1rem;
+      color: var(--gold-light);
+      margin-bottom: 8px;
+    }
+    .tip-card p {
+      font-size: 0.9rem;
+      color: var(--cream-dim);
+      line-height: 1.6;
+    }
+
+    /* ── PRACTICE TASKS ── */
+    .practice-steps {
+      counter-reset: step;
+      margin-top: 24px;
+    }
+    .practice-step {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 24px 24px 24px 70px;
+      margin-bottom: 16px;
+      position: relative;
+    }
+    .practice-step::before {
+      counter-increment: step;
+      content: counter(step);
+      position: absolute;
+      left: 20px;
+      top: 24px;
+      width: 36px;
+      height: 36px;
+      background: var(--crimson);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-serif);
+      font-size: 1.1rem;
+      color: var(--white);
+      line-height: 36px;
+      text-align: center;
+    }
+    .practice-step h4 {
+      font-family: var(--font-serif);
+      font-size: 1.05rem;
+      color: var(--gold-light);
+      margin-bottom: 6px;
+    }
+    .practice-step p { font-size: 0.92rem; color: var(--cream-dim); }
+    .practice-step .duration {
+      display: inline-block;
+      margin-top: 10px;
+      background: rgba(201,161,74,0.12);
+      border: 1px solid rgba(201,161,74,0.3);
+      color: var(--gold);
+      font-size: 0.78rem;
+      padding: 2px 10px;
+      border-radius: 10px;
+    }
+
+    /* ── COLLAPSIBLE ── */
+    .collapse-btn {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      width: 100%;
+      text-align: left;
+      padding: 16px 20px;
+      color: var(--cream);
+      font-size: 0.95rem;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 6px;
+      font-family: var(--font-sans);
+      transition: background 0.2s;
+    }
+    .collapse-btn:hover { background: #2a1e14; }
+    .collapse-btn .arrow {
+      color: var(--gold);
+      transition: transform 0.2s;
+      font-size: 0.8rem;
+    }
+    .collapse-btn.open .arrow { transform: rotate(180deg); }
+    .collapse-content {
+      display: none;
+      background: #0f0c08;
+      border: 1px solid var(--border);
+      border-radius: 0 0 8px 8px;
+      padding: 20px;
+      margin-top: -6px;
+      margin-bottom: 10px;
+      font-size: 0.92rem;
+      color: var(--cream-dim);
+      line-height: 1.75;
+    }
+    .collapse-content.open { display: block; }
+
+    /* ── SCHEDULE ── */
+    .schedule-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 24px;
+      font-size: 0.9rem;
+    }
+    .schedule-table th {
+      background: rgba(201,161,74,0.1);
+      color: var(--gold);
+      text-align: left;
+      padding: 12px 16px;
+      font-weight: normal;
+      letter-spacing: 0.06em;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      border-bottom: 1px solid var(--border);
+    }
+    .schedule-table td {
+      padding: 12px 16px;
+      border-bottom: 1px solid #1e1610;
+      color: var(--cream-dim);
+      vertical-align: top;
+    }
+    .schedule-table tr:hover td { background: rgba(255,255,255,0.02); }
+    .schedule-table .week-label {
+      font-family: var(--font-serif);
+      color: var(--white);
+      font-size: 0.95rem;
+    }
+    .tempo-chip {
+      display: inline-block;
+      background: rgba(74,127,160,0.2);
+      border: 1px solid rgba(74,127,160,0.4);
+      color: #80bcd8;
+      font-size: 0.75rem;
+      padding: 1px 8px;
+      border-radius: 8px;
+      margin-left: 6px;
+    }
+
+    /* ── DOWNLOAD CARDS ── */
+    .download-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+      margin-top: 28px;
+    }
+    .dl-card {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      text-align: center;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .dl-card:hover {
+      border-color: var(--gold);
+      transform: translateY(-2px);
+    }
+    .dl-icon {
+      font-size: 2.4rem;
+      margin-bottom: 12px;
+    }
+    .dl-card h4 {
+      font-family: var(--font-serif);
+      font-size: 1.05rem;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+    .dl-card p {
+      font-size: 0.85rem;
+      color: var(--cream-dim);
+      margin-bottom: 18px;
+    }
+    .btn-dl {
+      display: inline-block;
+      background: var(--gold);
+      color: #0f0c0a;
+      text-decoration: none;
+      padding: 9px 22px;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      transition: background 0.2s;
+    }
+    .btn-dl:hover { background: var(--gold-light); }
+
+    /* ── CALLOUT ── */
+    .callout {
+      background: rgba(139,26,42,0.15);
+      border: 1px solid rgba(139,26,42,0.4);
+      border-left: 3px solid var(--crimson-light);
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin: 20px 0;
+      font-size: 0.92rem;
+      color: var(--cream);
+    }
+    .callout.blue {
+      background: rgba(74,127,160,0.1);
+      border-color: rgba(74,127,160,0.3);
+      border-left-color: var(--accent-blue);
+    }
+    .callout.green {
+      background: rgba(74,128,96,0.1);
+      border-color: rgba(74,128,96,0.3);
+      border-left-color: var(--green);
+    }
+    .callout strong { color: var(--gold-light); }
+
+    /* ── QUOTE ── */
+    .quote-block {
+      border-left: 3px solid var(--gold);
+      padding: 16px 24px;
+      margin: 28px 0;
+      font-family: var(--font-serif);
+      font-size: 1.05rem;
+      font-style: italic;
+      color: var(--cream-dim);
+    }
+    .quote-block cite {
+      display: block;
+      margin-top: 8px;
+      font-size: 0.82rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-style: normal;
+      color: var(--gold);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      padding: 40px 24px;
+      text-align: center;
+      color: var(--cream-dim);
+      font-size: 0.82rem;
+    }
+    footer .ornament { color: var(--gold); font-size: 1.2rem; margin-bottom: 10px; }
+
+    /* ── UTILITIES ── */
+    .divider {
+      height: 1px;
+      background: var(--border);
+      margin: 32px 0;
+    }
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+    }
+    @media (max-width: 700px) { .two-col { grid-template-columns: 1fr; } }
+
+    ul.styled {
+      padding-left: 0;
+      list-style: none;
+    }
+    ul.styled li {
+      padding: 6px 0 6px 22px;
+      position: relative;
+      color: var(--cream-dim);
+      font-size: 0.93rem;
+    }
+    ul.styled li::before {
+      content: '›';
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+      font-size: 1.1rem;
+    }
+
+    /* ── VIDEOS ── */
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 24px;
+      margin-top: 28px;
+    }
+    .video-card {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .video-card:hover {
+      border-color: var(--gold);
+      transform: translateY(-2px);
+    }
+    .video-embed {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      background: #000;
+    }
+    .video-embed iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      border: none;
+    }
+    .video-search-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      min-height: 190px;
+      background: linear-gradient(135deg, #1a0a0a, #0a0818);
+      color: var(--cream-dim);
+      text-decoration: none;
+      font-size: 0.9rem;
+      padding: 20px;
+      text-align: center;
+      transition: background 0.2s;
+    }
+    .video-search-link:hover { background: linear-gradient(135deg, #2a1010, #100a28); }
+    .video-search-link .play-icon {
+      font-size: 2.5rem;
+      display: block;
+      margin-bottom: 10px;
+    }
+    .video-info {
+      padding: 16px;
+    }
+    .video-info h4 {
+      font-family: var(--font-serif);
+      font-size: 1rem;
+      color: var(--white);
+      margin-bottom: 4px;
+    }
+    .video-info .vid-type {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--gold);
+      margin-bottom: 6px;
+    }
+    .video-info p {
+      font-size: 0.85rem;
+      color: var(--cream-dim);
+      line-height: 1.5;
+    }
+
+    /* ── RESOURCE LINKS ── */
+    .resource-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+      margin-top: 24px;
+    }
+    .resource-card {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 22px;
+      transition: border-color 0.2s;
+    }
+    .resource-card:hover { border-color: var(--gold); }
+    .resource-card h4 {
+      font-family: var(--font-serif);
+      font-size: 1rem;
+      color: var(--gold-light);
+      margin-bottom: 6px;
+    }
+    .resource-card p {
+      font-size: 0.85rem;
+      color: var(--cream-dim);
+      margin-bottom: 12px;
+      line-height: 1.5;
+    }
+    .resource-card a.res-link {
+      display: inline-block;
+      color: var(--gold);
+      font-size: 0.82rem;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(201,161,74,0.3);
+      padding-bottom: 1px;
+      transition: border-color 0.2s;
+    }
+    .resource-card a.res-link:hover { border-color: var(--gold); }
+    .res-tag {
+      display: inline-block;
+      background: rgba(74,127,160,0.2);
+      color: #80bcd8;
+      font-size: 0.7rem;
+      padding: 1px 8px;
+      border-radius: 8px;
+      margin-right: 6px;
+      margin-bottom: 8px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .res-tag.score { background: rgba(139,26,42,0.25); color: #e07888; }
+    .res-tag.lesson { background: rgba(74,128,96,0.2); color: #80c8a0; }
+    .res-tag.edition { background: rgba(201,161,74,0.15); color: var(--gold); }
+
+    .highlight { color: var(--gold-light); font-weight: 600; }
+    .mono {
+      font-family: 'Courier New', monospace;
+      background: rgba(255,255,255,0.05);
+      padding: 1px 6px;
+      border-radius: 4px;
+      font-size: 0.9em;
+      color: var(--gold-light);
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── HERO ── -->
+<header class="hero">
+  <div class="hero-ornament">✦ &nbsp; ✦ &nbsp; ✦</div>
+  <h1>Rachmaninoff<br><em>Prélude Op. 23, No. 2</em></h1>
+  <p class="hero-sub">Fingering &amp; Technique Master Guide</p>
+  <div class="hero-badges">
+    <span class="badge">B♭ major</span>
+    <span class="badge">Maestoso</span>
+    <span class="badge">Intermediate → Advanced</span>
+    <span class="badge">♩= 66–76</span>
+  </div>
+  <p class="hero-desc">
+    A comprehensive guide to understanding, fingering, and mastering this majestic prelude —
+    from its commanding opening chords to the inner voices that sing through the texture.
+    Built for the intermediate pianist ready to tackle Rachmaninoff's unique demands.
+  </p>
+</header>
+
+<!-- ── NAV ── -->
+<nav>
+  <div class="nav-inner">
+    <a href="#overview">Overview</a>
+    <a href="#fingering">Fingering Guide</a>
+    <a href="#practice">Part-Task Practice</a>
+    <a href="#tips">Awkward Fingering Tips</a>
+    <a href="#schedule">Practice Schedule</a>
+    <a href="#videos">Videos &amp; Lessons</a>
+    <a href="#resources">External Resources</a>
+    <a href="#downloads">Downloads</a>
+  </div>
+</nav>
+
+<!-- ── OVERVIEW ── -->
+<section id="overview">
+  <div class="container">
+    <div class="section-label">About the Piece</div>
+    <h2>Understanding Op. 23 No. 2</h2>
+    <p>
+      Written in 1900–1901 and published in 1903, the ten Préludes of Op. 23 represent Rachmaninoff at
+      his most concentrated — each a world unto itself. No. 2 in B♭ major opens with a declaration:
+      <em>Maestoso</em>, majestic and unapologetic, its chords landing with the weight of inevitability.
+    </p>
+
+    <div class="quote-block">
+      "The opening of No. 2 is like a cathedral door being thrown open — you feel the weight of it, the
+      reverb of stone, before the melody even has a chance to breathe."
+      <cite>— Pedagogical tradition</cite>
+    </div>
+
+    <!-- Structure Map -->
+    <h3>Structure at a Glance</h3>
+    <div class="structure-map">
+      <div class="struct-block a">
+        <div class="struct-label">Section A</div>
+        <div class="struct-name">Maestoso Theme</div>
+        <div class="struct-mm">mm. 1–14</div>
+        <div class="struct-char">Bold, chordal, marcato</div>
+      </div>
+      <div class="struct-block b">
+        <div class="struct-label">Section B</div>
+        <div class="struct-name">Cantabile</div>
+        <div class="struct-mm">mm. 15–28</div>
+        <div class="struct-char">Lyrical, inner voices emerge</div>
+      </div>
+      <div class="struct-block dev">
+        <div class="struct-label">Development</div>
+        <div class="struct-name">Intensification</div>
+        <div class="struct-mm">mm. 29–42</div>
+        <div class="struct-char">Builds to climax, triplet waves</div>
+      </div>
+      <div class="struct-block a">
+        <div class="struct-label">Section A'</div>
+        <div class="struct-name">Return</div>
+        <div class="struct-mm">mm. 43–54</div>
+        <div class="struct-char">Restatement, grander</div>
+      </div>
+      <div class="struct-block coda">
+        <div class="struct-label">Coda</div>
+        <div class="struct-name">Conclusion</div>
+        <div class="struct-mm">mm. 55–end</div>
+        <div class="struct-char">Resolution, quiet ending</div>
+      </div>
+    </div>
+
+    <div class="overview-grid">
+      <div class="info-card">
+        <h4>Key Technical Challenges</h4>
+        <ul class="styled">
+          <li>Dense chords requiring precise voicing across a wide compass</li>
+          <li>Inner voice independence — melody hidden within full textures</li>
+          <li>Wide stretches Rachmaninoff wrote for his own enormous hands (span of a 13th)</li>
+          <li>Bass octave leaps with fast repositioning</li>
+          <li>Sustained tone in the cantabile B section</li>
+          <li>Dramatic dynamic control (pp to fff)</li>
+        </ul>
+      </div>
+      <div class="info-card">
+        <h4>For Intermediate Pianists</h4>
+        <p>
+          The main challenge isn't speed — it's <em>weight, balance, and clarity</em>. Rachmaninoff's
+          textures can easily become muddy. The goal is to cultivate arm weight over finger force,
+          learn strategic fingering substitutions for stretches that exceed your hand's natural span,
+          and train your ear to hear through the chords to the singing melody.
+        </p>
+        <p style="margin-top:12px;">
+          Expected learning timeline: <span class="highlight">8–16 weeks</span> for a polished performance tempo.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FINGERING GUIDE ── -->
+<section id="fingering">
+  <div class="container">
+    <div class="section-label">Section by Section</div>
+    <h2>Fingering Guide</h2>
+    <p>
+      Below are detailed fingering recommendations for each major passage. Fingerings use standard notation:
+      <span class="mono">1</span> = thumb, <span class="mono">5</span> = pinky.
+      RH = Right Hand, LH = Left Hand. The goal is always the most ergonomic, musical path — not arbitrary numbering.
+    </p>
+
+    <!-- TABS -->
+    <div class="tabs-wrap">
+      <div class="tabs" id="fingeringTabs">
+        <button class="tab-btn active" data-tab="opening">Opening Theme</button>
+        <button class="tab-btn" data-tab="cantabile">Cantabile B Section</button>
+        <button class="tab-btn" data-tab="development">Development</button>
+        <button class="tab-btn" data-tab="return">Return &amp; Coda</button>
+      </div>
+
+      <!-- TAB: OPENING -->
+      <div class="tab-panel active" id="tab-opening">
+        <div class="fingering-section">
+          <h3>Opening Maestoso Chords <span class="section-tag">mm. 1–4</span></h3>
+          <div class="difficulty-bar">
+            <span class="difficulty-label">Difficulty:</span>
+            <div class="dots">
+              <div class="dot filled"></div><div class="dot filled"></div>
+              <div class="dot filled"></div><div class="dot"></div><div class="dot"></div>
+            </div>
+          </div>
+          <p>
+            The opening features marcato chords in both hands. The right hand must project the top note
+            of each chord as a clear melody while the left hand provides the harmonic bass.
+          </p>
+
+          <div class="finger-diagram">
+            <div class="hand-label">RIGHT HAND — Opening Chords (B♭ major tonic position)</div>
+            <div class="notes">Notes:     &nbsp; F  &nbsp; D♭ &nbsp; B♭ &nbsp; | &nbsp; E♭ &nbsp; C  &nbsp; A♭ &nbsp;</div>
+            <div class="fingering">Fingering: &nbsp; 5  &nbsp;  3  &nbsp;  1  &nbsp; | &nbsp;  5  &nbsp; 3  &nbsp;  1  &nbsp;</div>
+            <div style="margin-top:10px; color: #888; font-size: 0.82rem;">
+              Keep 5 firm and weighted. Avoid collapsing the knuckle.
+            </div>
+          </div>
+
+          <div class="finger-diagram">
+            <div class="hand-label">LEFT HAND — Bass Octave + Inner Voice</div>
+            <div class="notes">Notes:     &nbsp; B♭(low) &nbsp; F  &nbsp; D♭ &nbsp; | &nbsp; B♭(low) &nbsp; F  &nbsp;</div>
+            <div class="fingering">Fingering: &nbsp;    5    &nbsp;  2  &nbsp;  1  &nbsp; | &nbsp;    5    &nbsp;  2  &nbsp;</div>
+            <div style="margin-top:10px; color: #888; font-size: 0.82rem;">
+              Arm weight on the bass note. Fingers 1–2 supply inner tone, not force.
+            </div>
+          </div>
+
+          <div class="callout">
+            <strong>Key principle:</strong> Play the top note of every chord with the weight of the whole arm
+            behind finger 5. The inner notes are passengers — they ride along, not fight for attention.
+          </div>
+
+          <h3 style="margin-top:24px;">Chord Voicing Strategy</h3>
+          <p>
+            For chords spanning 9ths or 10ths, intermediately-handed pianists should use these adaptation techniques:
+          </p>
+          <ul class="styled">
+            <li><strong>Rolled chords:</strong> Roll from the bottom up, arriving on the top note on the beat — do NOT rush the roll.</li>
+            <li><strong>Thumb extension:</strong> Rotate the wrist slightly inward so the thumb can reach a low bass note before snapping back.</li>
+            <li><strong>Pedal bridging:</strong> Use the sustain pedal to connect bass notes your hand cannot hold simultaneously. Change pedal on each beat, not each chord.</li>
+          </ul>
+        </div>
+
+        <div class="fingering-section">
+          <h3>The Recurring Melodic Motif <span class="section-tag">mm. 5–8</span></h3>
+          <div class="difficulty-bar">
+            <span class="difficulty-label">Difficulty:</span>
+            <div class="dots">
+              <div class="dot filled"></div><div class="dot filled"></div>
+              <div class="dot filled"></div><div class="dot filled"></div><div class="dot"></div>
+            </div>
+          </div>
+          <p>
+            The right hand develops a descending line that must sing over the accompaniment.
+            Here, finger substitution becomes critical.
+          </p>
+
+          <div class="finger-diagram">
+            <div class="hand-label">RIGHT HAND — Descending Melodic Line</div>
+            <div class="notes">Notes:     F  →  E♭  →  D♭  →  C  →  B♭</div>
+            <div class="fingering">Fingering: 5  →   4   →   3   →  2  →  1</div>
+            <div style="margin-top:10px; color: #888; font-size: 0.82rem;">
+              Classic descending scale fingering — maintain a curved hand throughout.
+              Do not let the wrist drop on the B♭ resolution.
+            </div>
+          </div>
+
+          <div class="callout blue">
+            <strong>Substitution tip:</strong> After playing a note with finger 4, silently slide finger 5
+            onto the same key while holding it — this frees the hand to move down without interrupting the tone.
+            Practice this substitution <em>very slowly</em> until it's silent.
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB: CANTABILE -->
+      <div class="tab-panel" id="tab-cantabile">
+        <div class="fingering-section">
+          <h3>Inner Voice Melody <span class="section-tag">mm. 15–22</span></h3>
+          <div class="difficulty-bar">
+            <span class="difficulty-label">Difficulty:</span>
+            <div class="dots">
+              <div class="dot filled"></div><div class="dot filled"></div>
+              <div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div>
+            </div>
+          </div>
+          <p>
+            This is the hardest passage for many intermediates: the right hand must project a singing
+            inner voice (typically played by fingers 3–4) while simultaneously keeping the top notes
+            quieter and the bottom notes even softer. Three independent dynamic layers in one hand.
+          </p>
+
+          <div class="finger-diagram">
+            <div class="hand-label">RIGHT HAND — Three-Layer Texture (conceptual)</div>
+            <div class="notes" style="color: #e8c87a;">Top voice (softer):   5 ─────────── (sustained)</div>
+            <div class="fingering" style="color: #f0e8d8; margin: 6px 0;">Inner melody (louder): 4 → 3 → 4 → 3 → 2  ← PROJECT THIS</div>
+            <div class="notes" style="color: #888;">Bass fill (softest):  1 ─────────── (background)</div>
+            <div style="margin-top:12px; color: #888; font-size: 0.82rem;">
+              Depress top & bottom notes gently. Drive the inner voice with focused fingertip pressure on 3–4.
+            </div>
+          </div>
+
+          <div class="callout">
+            <strong>Practice method:</strong> First, play only the inner voice line alone in forte. Then add the outer
+            voices in pianissimo. Record yourself — your ear will reveal if you've achieved the balance.
+          </div>
+
+          <h3 style="margin-top:24px;">Left Hand Accompaniment Patterns</h3>
+          <p>
+            The LH in the B section often provides a flowing, arpeggio-like accompaniment spanning a wide range.
+          </p>
+
+          <div class="finger-diagram">
+            <div class="hand-label">LEFT HAND — Wide Arpeggio Figure (typical pattern)</div>
+            <div class="notes">Notes:     B♭(low) → F → D♭ → F → [next bass]</div>
+            <div class="fingering">Fingering:    5    →  2 →  1  →  2 →  5 (or 4)</div>
+            <div style="margin-top:10px; color: #888; font-size: 0.82rem;">
+              Rotate the forearm outward on the ascent. The wrist should feel like it's
+              scooping — not rigid. Thumb crosses under naturally on each octave change.
+            </div>
+          </div>
+
+          <ul class="styled">
+            <li>Practice the LH arpeggio at ♩= 40, focusing on smooth wrist rotation, not individual finger lifts</li>
+            <li>The wide spacing (5th to 1st finger) requires a relaxed wrist drop on the low bass note</li>
+            <li>Use the pedal to connect octave leaps — change pedal on the bass note, not after</li>
+            <li>Never grip: the arm hangs, the fingers are just contact points</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- TAB: DEVELOPMENT -->
+      <div class="tab-panel" id="tab-development">
+        <div class="fingering-section">
+          <h3>Ascending Triplet Wave Passages <span class="section-tag">mm. 29–38</span></h3>
+          <div class="difficulty-bar">
+            <span class="difficulty-label">Difficulty:</span>
+            <div class="dots">
+              <div class="dot filled"></div><div class="dot filled"></div>
+              <div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div>
+            </div>
+          </div>
+          <p>
+            The development section often introduces waves of triplets or sixteenth note runs building to
+            a climax. These require efficient fingering to avoid stumbling at tempo.
+          </p>
+
+          <div class="finger-diagram">
+            <div class="hand-label">RIGHT HAND — Ascending Scale Passage (B♭ natural minor)</div>
+            <div class="notes">B♭  C   D♭  E♭  F   G♭  A♭  B♭</div>
+            <div class="fingering">1   2   3   1   2   3   4   5</div>
+            <div style="margin-top:10px; color: #888; font-size: 0.82rem;">
+              Thumb crosses under after the 3rd finger on D♭. Keep the elbow loose
+              and let the forearm lead the hand upward — don't drag the elbow.
+            </div>
+          </div>
+
+          <div class="finger-diagram">
+            <div class="hand-label">LEFT HAND — Descending Countermotion</div>
+            <div class="notes">B♭  A♭  G♭  F   E♭  D♭  C   B♭</div>
+            <div class="fingering">1   2   3   4   1   2   3   5</div>
+            <div style="margin-top:10px; color: #888; font-size: 0.82rem;">
+              Finger 4 over 1 crossing (not common — practice this until smooth).
+              The LH descends as the RH ascends for contrary motion.
+            </div>
+          </div>
+
+          <div class="callout green">
+            <strong>Hands Together Strategy:</strong> Never combine hands until each is polished at
+            a very slow tempo. When you do combine: first at ♩= 40, listen for rhythmic alignment,
+            then increase by 5 BPM increments only when the slower tempo feels automatic.
+          </div>
+
+          <h3 style="margin-top:24px;">Chord Cluster Passages</h3>
+          <p>
+            Rapid chord successions in the development require a "pouncing" technique — the wrist
+            springs off each chord rather than pressing into it.
+          </p>
+
+          <div class="finger-diagram">
+            <div class="hand-label">RH — Rapid Chord Succession Fingering</div>
+            <div class="notes">Chords: [B♭-D♭-F] → [C-E♭-G♭] → [D♭-F-A♭]</div>
+            <div class="fingering">        [1 - 3 - 5] → [1 - 3 - 5] → [1 - 3 - 5]</div>
+            <div style="margin-top:10px; color: #888; font-size: 0.82rem;">
+              Keep the same hand shape when the interval pattern is consistent.
+              The wrist lifts slightly between chords — never collapses.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB: RETURN -->
+      <div class="tab-panel" id="tab-return">
+        <div class="fingering-section">
+          <h3>Return of the Maestoso Theme <span class="section-tag">mm. 43–54</span></h3>
+          <div class="difficulty-bar">
+            <span class="difficulty-label">Difficulty:</span>
+            <div class="dots">
+              <div class="dot filled"></div><div class="dot filled"></div>
+              <div class="dot filled"></div><div class="dot filled"></div><div class="dot"></div>
+            </div>
+          </div>
+          <p>
+            The return of the opening material is often thicker and more imposing. The challenge
+            is maintaining freshness and power after the preceding physical exertion of the development.
+          </p>
+          <ul class="styled">
+            <li>Use the same fingering as the opening — consistency reduces cognitive load under pressure</li>
+            <li>Relax your shoulders in the bars before the return; tension accumulates subtly</li>
+            <li>The fff marking here demands arm weight, not forearm force — let your whole torso contribute</li>
+            <li>Octave tremolos (if present): alternate fingers 5–1, keeping the wrist loose and rotating</li>
+          </ul>
+
+          <div class="callout">
+            <strong>Physical recovery tip:</strong> In any rest beats during the return, consciously drop
+            your elbow and let the arm hang for a fraction of a second. This micro-recovery prevents tension buildup.
+          </div>
+        </div>
+
+        <div class="fingering-section">
+          <h3>Coda — Final Resolution <span class="section-tag">Final measures</span></h3>
+          <div class="difficulty-bar">
+            <span class="difficulty-label">Difficulty:</span>
+            <div class="dots">
+              <div class="dot filled"></div><div class="dot filled"></div>
+              <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+            </div>
+          </div>
+          <p>
+            The coda of Op. 23 No. 2 often ends quietly — a whisper after the storm. This requires
+            extraordinary control, as the tendency after playing so much power is to let the final
+            bars go loose. Maintain the same arm-weight technique, simply with much less weight applied.
+          </p>
+          <ul class="styled">
+            <li>Final B♭ chord: fingers 5–3–1 (RH), sink into the keys with a gentle arm, do not press</li>
+            <li>Hold the final note through to its full value before lifting the pedal</li>
+            <li>The silence after is part of the piece — do not move immediately</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PRACTICE ── -->
+<section id="practice">
+  <div class="container">
+    <div class="section-label">Part-Task Approach</div>
+    <h2>Breaking Down Difficult Passages</h2>
+    <p>
+      The part-task method divides each difficult passage into its smallest learnable components,
+      masters each independently, then progressively reassembles them. This avoids the trap of
+      "practicing mistakes" — running through a passage repeatedly without improvement.
+    </p>
+
+    <div class="callout blue">
+      <strong>The core rule:</strong> Never move on to a harder step until the current step sounds <em>musical</em> —
+      not just technically correct, but beautiful — at a slow tempo. Speed is added last.
+    </div>
+
+    <!-- Opening chord passage -->
+    <h3 style="margin-top:32px;">Passage 1: The Opening Maestoso Chords</h3>
+    <div class="practice-steps">
+      <div class="practice-step">
+        <h4>Isolate the Right Hand Top Voice Only</h4>
+        <p>Play only the top note of every RH chord as a single-note melody. This establishes the melodic line in your ear before adding the harmonic weight. Use finger 5 throughout, with full arm support. Aim for a rich, singing tone.</p>
+        <span class="duration">⏱ 5–10 min/day · ♩ = 50</span>
+      </div>
+      <div class="practice-step">
+        <h4>Add Inner Notes to the RH Melody</h4>
+        <p>Now play the complete RH chords, but consciously think of the top note as 3× louder than the inner notes. Practice slowly, stopping after each chord to check: are the inner notes truly softer? Record yourself and listen back.</p>
+        <span class="duration">⏱ 10 min/day · ♩ = 50</span>
+      </div>
+      <div class="practice-step">
+        <h4>Isolate the Left Hand Bass Line</h4>
+        <p>Play only the LH bass notes (the lowest note of every LH group) as a single-note line. Get the bass melody singing. Then add the inner LH voices, keeping the bass clearly dominant.</p>
+        <span class="duration">⏱ 5–8 min/day · ♩ = 50</span>
+      </div>
+      <div class="practice-step">
+        <h4>Hands Together at Half Speed</h4>
+        <p>Combine both hands at ♩ = 40. Listen for alignment — every beat should feel "together" without rushing. Play the first 4 bars only on repeat. Do not increase tempo until this is perfectly clean and sounds musical at this slow speed.</p>
+        <span class="duration">⏱ 10 min/day · ♩ = 40–52</span>
+      </div>
+      <div class="practice-step">
+        <h4>Rhythmic Transformations</h4>
+        <p>Transform the passage into dotted rhythms (long-short, then short-long). This creates an uneven pattern that forces each finger to develop strength independently and exposes weak fingers hiding behind strong ones. Then return to even rhythm.</p>
+        <span class="duration">⏱ 5 min/day · ♩ = 60</span>
+      </div>
+      <div class="practice-step">
+        <h4>Gradual Tempo Increase</h4>
+        <p>Increase by 4 BPM only when the previous tempo is <em>effortless</em> — not just playable. Use a metronome. Target performance tempo: ♩ = 66–76. Never practice at a tempo you cannot control.</p>
+        <span class="duration">⏱ 10 min/day · ♩ = 56 → 76</span>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- Inner voice passage -->
+    <h3>Passage 2: Inner Voice Independence (B Section)</h3>
+    <div class="practice-steps">
+      <div class="practice-step">
+        <h4>Extract and Play Only the Inner Melody</h4>
+        <p>Find every note of the inner voice melody and play it alone, forte, as a clear singing line. Identify which fingers will carry it (typically 3 and 4). Learn this line until you can hum it while playing.</p>
+        <span class="duration">⏱ 5 min · ♩ = 50</span>
+      </div>
+      <div class="practice-step">
+        <h4>Two-Layer Texture: Inner + Bass</h4>
+        <p>Play only the inner melody (forte) plus the lowest bass notes (piano). Ignore the top voice for now. This trains the left-right balance before adding complexity.</p>
+        <span class="duration">⏱ 8 min · ♩ = 50</span>
+      </div>
+      <div class="practice-step">
+        <h4>Full Texture with Conscious Voicing</h4>
+        <p>Add the top voice and accompanying notes, playing them at a whisper (pp) while the inner melody sings at mf. This is the hardest step — your hand must produce three different dynamic levels simultaneously.</p>
+        <span class="duration">⏱ 10 min · ♩ = 44–52</span>
+      </div>
+      <div class="practice-step">
+        <h4>Ear Training: Record &amp; Evaluate</h4>
+        <p>Record yourself on any device. Listen back without playing. Can you hear the inner melody clearly? Does it sing? If not, return to Step 1. This feedback loop is more valuable than another hour of repetition without evaluation.</p>
+        <span class="duration">⏱ 5 min (listening)</span>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- Wide stretches -->
+    <h3>Passage 3: Wide Stretches &amp; Bass Leaps</h3>
+    <div class="practice-steps">
+      <div class="practice-step">
+        <h4>Map Every Stretch in Advance</h4>
+        <p>Before playing, identify every place where your hand must span more than an octave. Mark these in the score. Plan which notes will be rolled vs held, and where you'll rely on the pedal. Having a plan prevents panic at speed.</p>
+        <span class="duration">⏱ 10 min (score study, no piano needed)</span>
+      </div>
+      <div class="practice-step">
+        <h4>Practice Leaps as Two-Note Exercises</h4>
+        <p>Take any large LH leap and practice just the jump — bass note to destination note — repeatedly. Eyes closed. The hand must "memorize" the distance. Land on the target note without looking, keeping the wrist fluid on the jump.</p>
+        <span class="duration">⏱ 5 min per problematic leap</span>
+      </div>
+      <div class="practice-step">
+        <h4>Slow Context Practice</h4>
+        <p>Put the leaps back into their musical context at ♩ = 36. The surrounding passage gives the leap its direction. Never practice jumps as isolated gymnastics for too long — musical context shapes the physical gesture.</p>
+        <span class="duration">⏱ 10 min · ♩ = 36–50</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── TIPS ── -->
+<section id="tips">
+  <div class="container">
+    <div class="section-label">Technical Solutions</div>
+    <h2>Navigating Awkward Fingering</h2>
+    <p>
+      Rachmaninoff wrote for his own extraordinary hands — a span exceeding a 13th — which creates real
+      challenges for normally-proportioned hands. These tips are specifically adapted for intermediate pianists.
+    </p>
+
+    <div class="tips-grid">
+      <div class="tip-card">
+        <div class="tip-icon">🤲</div>
+        <h4>Arm Rotation for Wide Chords</h4>
+        <p>When a chord spans a 10th or more, rotate the forearm inward (pronation) to place the thumb under the chord before playing. This effectively adds 1–2 notes to your reach without stretching. Rotation is more efficient than stretching.</p>
+      </div>
+      <div class="tip-card">
+        <div class="tip-icon">🔄</div>
+        <h4>Silent Finger Substitution</h4>
+        <p>On sustained notes, silently swap fingers (e.g., replace finger 3 with finger 4 while the key is depressed) to free the previous finger for the next note. Practice this daily — it should be inaudible. Essential for legato in thick textures.</p>
+      </div>
+      <div class="tip-card">
+        <div class="tip-icon">🎹</div>
+        <h4>Strategic Pedaling for Stretches</h4>
+        <p>Use the sustain pedal to connect bass notes your hand cannot hold. Change the pedal precisely on the bass note of each new harmony, not after. "Syncopated pedaling" (overlap pedaling) is your best friend in Rachmaninoff.</p>
+      </div>
+      <div class="tip-card">
+        <div class="tip-icon">👆</div>
+        <h4>Rolling Large Chords</h4>
+        <p>Wide chords don't have to be "block" chords. Roll from the bottom up, arriving on the top note exactly on the beat. The roll should be fast enough to sound like one chord to a listener. Practice the roll speed: too slow sounds sloppy, too fast sounds like a block chord anyway.</p>
+      </div>
+      <div class="tip-card">
+        <div class="tip-icon">💪</div>
+        <h4>Weight vs. Force</h4>
+        <p>Never tense the forearm muscles to produce volume. Instead, allow the arm's weight to fall into the keys. A heavy, relaxed arm produces a richer sound than a tense, forced one. Practice playing fortissimo while your shoulder remains completely soft.</p>
+      </div>
+      <div class="tip-card">
+        <div class="tip-icon">📐</div>
+        <h4>Wrist Height Adjustments</h4>
+        <p>Lower the wrist for octaves (more arm involvement), raise it for single-note passages (more finger agility). Many awkward fingering problems disappear when the wrist height is correct. The wrist should never be below the level of the keys for Rachmaninoff's thick chords.</p>
+      </div>
+      <div class="tip-card">
+        <div class="tip-icon">✋</div>
+        <h4>4th Finger Strengthening</h4>
+        <p>Rachmaninoff's inner voices often fall to ring finger (4) — the naturally weakest. Practice Hanon exercises No. 10–12 specifically targeting the 4th finger, but always musically, never mechanically. A strong 4th finger unlocks the inner voice in this prelude.</p>
+      </div>
+      <div class="tip-card">
+        <div class="tip-icon">🎯</div>
+        <h4>Thumb Position in Chords</h4>
+        <p>The thumb should approach chord notes from a slightly elevated position and land on the side of its tip (not the flat pad). This gives more control and prevents the thumb from "clouding" the inner voices. Keep thumb bent at the joint — never flat.</p>
+      </div>
+      <div class="tip-card">
+        <div class="tip-icon">🧘</div>
+        <h4>Rest Before Difficult Passages</h4>
+        <p>In practice sessions, always play through physically demanding sections first when your hands are fresh — not at the end of a long session. Rachmaninoff played with extraordinary endurance, but as a learner, fatigue creates bad habits that stick.</p>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <h3>Frequently Encountered Specific Problems</h3>
+
+    <button class="collapse-btn" onclick="toggleCollapse(this)">
+      "My 5th finger collapses when playing loud chords" <span class="arrow">▼</span>
+    </button>
+    <div class="collapse-content">
+      This is extremely common. The solution is <strong>knuckle arch training</strong>: practice holding the chord shape with all fingers curved, then tap just the 5th finger up and down while keeping the others still. The knuckle arch (the "bridge" of the hand) must be firm. Play slow chords with conscious attention to keeping the 5th finger's first knuckle from collapsing inward. A flat 5th finger loses both power and tone quality.
+    </div>
+
+    <button class="collapse-btn" onclick="toggleCollapse(this)">
+      "The inner voice disappears when I add the outer voices" <span class="arrow">▼</span>
+    </button>
+    <div class="collapse-content">
+      This is a <strong>balance problem</strong>, not a fingering problem. Your brain and ear are not yet trained to distinguish three dynamic layers in one hand. Practice the passage with an exaggerated balance first: inner voice in forte, outer voices in pppp (almost inaudible). Only when you can hear the three layers clearly at this exaggerated balance should you bring them to a more natural proportion. Recording yourself is essential here — the ear deceives itself at the piano.
+    </div>
+
+    <button class="collapse-btn" onclick="toggleCollapse(this)">
+      "The bass leaps in the LH cause me to lose tempo" <span class="arrow">▼</span>
+    </button>
+    <div class="collapse-content">
+      The LH bass leaps require <strong>spatial memory</strong> in the hand — the hand must "know" where it's going before it gets there. Practice: play the landing note alone, then the departure note, eyes closed, then leap between them. Repeat 20× per day. Also practice "ghost leaps" — mime the leap in the air above the keys, then do it on the keys. The motion must become reflexive. The tempo problem disappears when the leap is no longer a decision but a reflex.
+    </div>
+
+    <button class="collapse-btn" onclick="toggleCollapse(this)">
+      "The passage sounds muddy even with the right fingering" <span class="arrow">▼</span>
+    </button>
+    <div class="collapse-content">
+      Muddiness is almost always a <strong>pedaling problem</strong>. Over-pedaling is the most common mistake in Rachmaninoff. Practice the entire passage without any pedal first — every note must be clear even without pedal. Then add pedal conservatively: change on each harmonic change (usually each beat or every two beats in the Maestoso). If notes from different harmonies are bleeding together, your pedal changes are too slow. Practice pedal changes silently to develop the muscle memory separately.
+    </div>
+
+    <button class="collapse-btn" onclick="toggleCollapse(this)">
+      "My hand tires quickly in the opening section" <span class="arrow">▼</span>
+    </button>
+    <div class="collapse-content">
+      Fatigue = tension. You are using muscular force where you should be using gravity and arm weight. The prescription: practice the opening at pppp with total arm relaxation. Then gradually add weight (not muscle). If you feel burning in your forearm after 30 seconds, stop immediately — you are using the wrong muscles. True arm-weight playing can be sustained for a long time. Practice daily but never play through pain.
+    </div>
+  </div>
+</section>
+
+<!-- ── SCHEDULE ── -->
+<section id="schedule">
+  <div class="container">
+    <div class="section-label">Structured Study</div>
+    <h2>Suggested Practice Schedule</h2>
+    <p>
+      A 12-week plan from first reading to polished performance. Adjust based on your daily practice time
+      (this assumes 45–60 minutes per day dedicated to this piece).
+    </p>
+
+    <table class="schedule-table">
+      <thead>
+        <tr>
+          <th>Week(s)</th>
+          <th>Focus</th>
+          <th>Goal</th>
+          <th>Target Tempo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="week-label">1–2</span></td>
+          <td>Score study + hands separate, very slow. Map all stretches, fingering choices.</td>
+          <td>Know all notes cleanly, separate hands</td>
+          <td><span class="tempo-chip">♩ = 40</span></td>
+        </tr>
+        <tr>
+          <td><span class="week-label">3–4</span></td>
+          <td>Hands together, Section A only. Focus on voicing and arm weight in opening theme.</td>
+          <td>Opening theme clean HT, musical shape</td>
+          <td><span class="tempo-chip">♩ = 46–52</span></td>
+        </tr>
+        <tr>
+          <td><span class="week-label">5–6</span></td>
+          <td>Section B — inner voice independence. Record daily. Part-task method for inner voices.</td>
+          <td>Hear 3 dynamic layers in B section</td>
+          <td><span class="tempo-chip">♩ = 44–50</span></td>
+        </tr>
+        <tr>
+          <td><span class="week-label">7–8</span></td>
+          <td>Development section HT. Rhythmic transformations for chord passages.</td>
+          <td>Development clean, no stumbles</td>
+          <td><span class="tempo-chip">♩ = 52–58</span></td>
+        </tr>
+        <tr>
+          <td><span class="week-label">9–10</span></td>
+          <td>Full piece hands together. Address remaining technical weak spots. Pedaling refinement.</td>
+          <td>Play-through the whole piece consistently</td>
+          <td><span class="tempo-chip">♩ = 58–66</span></td>
+        </tr>
+        <tr>
+          <td><span class="week-label">11</span></td>
+          <td>Musicality: phrase shaping, dynamics, character. Reduce score dependency.</td>
+          <td>Expressive, musical performance from memory (optional)</td>
+          <td><span class="tempo-chip">♩ = 66–72</span></td>
+        </tr>
+        <tr>
+          <td><span class="week-label">12</span></td>
+          <td>Performance preparation: play through daily, simulate performance conditions.</td>
+          <td>Confident, musical performance at tempo</td>
+          <td><span class="tempo-chip">♩ = 72–76</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="callout green" style="margin-top:28px;">
+      <strong>Daily practice structure (45 min):</strong> 5 min warm-up scales/arpeggios → 15 min targeted
+      part-task work on current problem passage → 15 min hands-together practice of current week's section →
+      10 min play-through of previously learned sections to maintain them.
+    </div>
+
+    <div class="divider"></div>
+
+    <h3>Hand Warm-Up Exercises for This Piece</h3>
+    <div class="two-col">
+      <div>
+        <h4 style="color: var(--cream); font-size: 0.95rem; margin-bottom: 10px;">Before Each Practice Session:</h4>
+        <ul class="styled">
+          <li>B♭ major / B♭ major scales, 2 octaves, slow (finger independence)</li>
+          <li>Chromatic scale, both hands, focus on evenness</li>
+          <li>B♭ major arpeggios — wide, relaxed wrist rotation</li>
+          <li>Hanon No. 10–12 in B♭, one time through (4th finger)</li>
+          <li>Chord voicing exercise: play any chord, exaggerate the top note</li>
+        </ul>
+      </div>
+      <div>
+        <h4 style="color: var(--cream); font-size: 0.95rem; margin-bottom: 10px;">Physical Reminders:</h4>
+        <ul class="styled">
+          <li>Never practice if your hands are cold — warm them first</li>
+          <li>Stop at first sign of pain or tension — never "push through"</li>
+          <li>Maximum continuous playing: 45 minutes, then rest 15</li>
+          <li>Stretch fingers between sessions — gentle, never forced</li>
+          <li>Stay hydrated — dehydration affects fine motor control</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── VIDEOS & LESSONS ── -->
+<section id="videos">
+  <div class="container">
+    <div class="section-label">Watch &amp; Learn</div>
+    <h2>Performances, Tutorials &amp; Masterclasses</h2>
+    <p>
+      Studying great performances is essential to understanding this prelude. Below are curated
+      YouTube performances and educational resources — watch how different pianists solve the same
+      technical challenges.
+    </p>
+
+    <h3 style="margin-top:28px;">Reference Performances</h3>
+    <p style="font-size:0.92rem; color: var(--cream-dim); margin-bottom: 20px;">
+      Listen to how these pianists handle the opening weight, inner voice balance, and overall pacing.
+      Each has a distinct approach — studying multiple interpretations sharpens your own musical decisions.
+    </p>
+
+    <div class="video-grid">
+      <div class="video-card">
+        <div class="video-embed">
+          <a class="video-search-link" href="https://www.youtube.com/results?search_query=Kissin+Rachmaninoff+Prelude+Op+23+No+2+B+flat+major" target="_blank" rel="noopener">
+            <div>
+              <span class="play-icon">&#9654;</span>
+              Search on YouTube
+            </div>
+          </a>
+        </div>
+        <div class="video-info">
+          <div class="vid-type">Performance</div>
+          <h4>Evgeny Kissin</h4>
+          <p>Proms 2000 encore. Powerful, thick tone, ~80 BPM with rubato. Study his arm weight and voicing in the opening chords.</p>
+        </div>
+      </div>
+
+      <div class="video-card">
+        <div class="video-embed">
+          <a class="video-search-link" href="https://www.youtube.com/results?search_query=Ashkenazy+Rachmaninoff+Prelude+Op+23+No+2" target="_blank" rel="noopener">
+            <div>
+              <span class="play-icon">&#9654;</span>
+              Search on YouTube
+            </div>
+          </a>
+        </div>
+        <div class="video-info">
+          <div class="vid-type">Performance</div>
+          <h4>Vladimir Ashkenazy</h4>
+          <p>1975 recording. Crisp clarity at ~70 BPM. Study his pedaling precision — every harmony change is clean.</p>
+        </div>
+      </div>
+
+      <div class="video-card">
+        <div class="video-embed">
+          <a class="video-search-link" href="https://www.youtube.com/results?search_query=Richter+Rachmaninoff+Prelude+Op+23+No+2" target="_blank" rel="noopener">
+            <div>
+              <span class="play-icon">&#9654;</span>
+              Search on YouTube
+            </div>
+          </a>
+        </div>
+        <div class="video-info">
+          <div class="vid-type">Performance</div>
+          <h4>Sviatoslav Richter</h4>
+          <p>Slower, deeply expressive with substantial rubato. Study how he shapes the cantabile B section — every phrase breathes.</p>
+        </div>
+      </div>
+
+      <div class="video-card">
+        <div class="video-embed">
+          <a class="video-search-link" href="https://www.youtube.com/results?search_query=Gavrilov+Rachmaninoff+Prelude+Op+23+No+2" target="_blank" rel="noopener">
+            <div>
+              <span class="play-icon">&#9654;</span>
+              Search on YouTube
+            </div>
+          </a>
+        </div>
+        <div class="video-info">
+          <div class="vid-type">Performance</div>
+          <h4>Andrei Gavrilov</h4>
+          <p>Full tempo throughout, electrifying energy. Study his command of the development section's rapid chord passages.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <h3>Tutorials &amp; Masterclasses</h3>
+    <div class="video-grid">
+      <div class="video-card">
+        <div class="video-embed">
+          <a class="video-search-link" href="https://www.tonebase.co/piano/courses/claire-huangci-teaches-prelude-op-23-no-2-composed-by-rachmaninoff" target="_blank" rel="noopener">
+            <div>
+              <span class="play-icon">&#127891;</span>
+              Visit tonebase
+            </div>
+          </a>
+        </div>
+        <div class="video-info">
+          <div class="vid-type">Masterclass</div>
+          <h4>Claire Huangci — tonebase Lesson</h4>
+          <p>Full breakdown by concert pianist Claire Huangci. She calls this piece "a piano concerto in 4 minutes." Covers technique, interpretation, and fingering in depth. (Subscription may be required.)</p>
+        </div>
+      </div>
+
+      <div class="video-card">
+        <div class="video-embed">
+          <a class="video-search-link" href="https://www.youtube.com/results?search_query=Rachmaninoff+Prelude+Op+23+No+2+piano+tutorial+lesson" target="_blank" rel="noopener">
+            <div>
+              <span class="play-icon">&#9654;</span>
+              Search tutorials on YouTube
+            </div>
+          </a>
+        </div>
+        <div class="video-info">
+          <div class="vid-type">Tutorial</div>
+          <h4>Piano Tutorial Videos</h4>
+          <p>Search YouTube for step-by-step tutorials. Look for videos that show close-up hand positions and discuss fingering choices for specific passages.</p>
+        </div>
+      </div>
+
+      <div class="video-card">
+        <div class="video-embed">
+          <a class="video-search-link" href="http://pianosage.blogspot.com/2012/03/performance-and-practice-notes.html" target="_blank" rel="noopener">
+            <div>
+              <span class="play-icon">&#128218;</span>
+              Read on Piano Sage
+            </div>
+          </a>
+        </div>
+        <div class="video-info">
+          <div class="vid-type">Practice Guide</div>
+          <h4>Piano Sage — Detailed Practice Notes</h4>
+          <p>Robert Emanuel's thorough guide with measure-by-measure analysis, tempo comparisons across pianists, and specific advice for bars 18–27 (the hardest passage). Includes embedded performance videos.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout blue" style="margin-top:28px;">
+      <strong>How to study a performance video:</strong> First listen straight through for the emotional arc.
+      Second listen: focus only on the hands and arm movement — how does the pianist produce power?
+      Third listen: follow the score — where do they add rubato, and where is the tempo strict?
+    </div>
+  </div>
+</section>
+
+<!-- ── EXTERNAL RESOURCES ── -->
+<section id="resources">
+  <div class="container">
+    <div class="section-label">Sheet Music &amp; Online Resources</div>
+    <h2>Free Scores, Fingered Editions &amp; References</h2>
+    <p>
+      These external links provide the actual sheet music — essential for applying the
+      fingering advice from this guide. Several offer free PDFs you can print and annotate.
+    </p>
+
+    <h3 style="margin-top:28px;">Free Sheet Music (PDF Downloads)</h3>
+    <div class="resource-grid">
+      <div class="resource-card">
+        <span class="res-tag score">Free Score</span>
+        <h4>IMSLP — Complete Op. 23</h4>
+        <p>The definitive free score repository. Multiple editions available including the original Gutheil edition and the Dover reprint. Download the full set or individual preludes.</p>
+        <a class="res-link" href="https://imslp.org/wiki/10_Preludes,_Op.23_(Rachmaninoff,_Sergei)" target="_blank" rel="noopener">Open on IMSLP &rarr;</a>
+      </div>
+
+      <div class="resource-card">
+        <span class="res-tag score">Free Score</span>
+        <h4>Musopen — Free Download</h4>
+        <p>Copyright-free PDF downloads of the complete Op. 23 set, plus MP3 recordings for study. No registration required for basic downloads.</p>
+        <a class="res-link" href="https://musopen.org/music/1229-10-preludes-op-23/" target="_blank" rel="noopener">Open on Musopen &rarr;</a>
+      </div>
+
+      <div class="resource-card">
+        <span class="res-tag score">Free Score</span><span class="res-tag">Fingering</span>
+        <h4>MuseScore — User-Annotated Score</h4>
+        <p>Community-created digital score of Op. 23 No. 2 with some fingering annotations. You can play back the score, adjust tempo, and add your own annotations.</p>
+        <a class="res-link" href="https://musescore.com/nkapiano/prelude-op23-no2" target="_blank" rel="noopener">Open on MuseScore &rarr;</a>
+      </div>
+
+      <div class="resource-card">
+        <span class="res-tag score">Free Score</span>
+        <h4>Cantorion — Free PDF</h4>
+        <p>Another source for the free public-domain edition. Clean, printable PDF suitable for annotation with your own fingering marks.</p>
+        <a class="res-link" href="https://cantorion.org/music/5109/10-Preludes-No-2.-Maestoso-in-B-flat-major" target="_blank" rel="noopener">Open on Cantorion &rarr;</a>
+      </div>
+
+      <div class="resource-card">
+        <span class="res-tag score">Free Score</span>
+        <h4>tonebase — Free Sheet Music</h4>
+        <p>Free downloadable sheet music for Op. 23 No. 2, provided alongside the Claire Huangci lesson series. May include editorial markings.</p>
+        <a class="res-link" href="https://resources.tonebase.co/piano/free-piano-sheet-music/rachmaninoff-prelude-op-23-no-2-in-b-flat-major" target="_blank" rel="noopener">Open on tonebase &rarr;</a>
+      </div>
+    </div>
+
+    <h3 style="margin-top:36px;">Recommended Editions (For Purchase)</h3>
+    <div class="resource-grid">
+      <div class="resource-card">
+        <span class="res-tag edition">Recommended</span>
+        <h4>Piano Practical Editions — Fingered</h4>
+        <p>Professional edition with detailed fingering throughout, editorial pedaling suggestions, and performance notes. Specifically designed for study and practice.</p>
+        <a class="res-link" href="https://pianopracticaleditions.com/rachmaninov/" target="_blank" rel="noopener">Browse editions &rarr;</a>
+      </div>
+
+      <div class="resource-card">
+        <span class="res-tag edition">Recommended</span>
+        <h4>Alfred Music — Murray Baylor Edition</h4>
+        <p>Edited by Murray Baylor with performance notes that highlight difficult passages and offer suggestions on technical approach. A trusted pedagogical edition.</p>
+        <a class="res-link" href="https://www.alfred.com/rachmaninoff-preludes-opus-23/p/00-515/" target="_blank" rel="noopener">View on Alfred &rarr;</a>
+      </div>
+
+      <div class="resource-card">
+        <span class="res-tag edition">Urtext</span>
+        <h4>Henle Verlag — Urtext Edition</h4>
+        <p>The scholarly Urtext with Rachmaninoff's original markings and no editorial additions. Use when you want to make all fingering decisions yourself based on the composer's intent.</p>
+        <a class="res-link" href="https://www.henle.de/en/Prelude-g-minor-op.-23-no.-5/HN-1212" target="_blank" rel="noopener">Browse Henle &rarr;</a>
+      </div>
+    </div>
+
+    <h3 style="margin-top:36px;">Additional Online Guides</h3>
+    <div class="resource-grid">
+      <div class="resource-card">
+        <span class="res-tag lesson">Practice Guide</span>
+        <h4>Piano Sage — Practice &amp; Performance Notes</h4>
+        <p>Robert Emanuel's thorough blog post with bar-by-bar analysis, tempo comparisons of major recordings (Kissin, Ashkenazy, Richter), and specific practice strategies for the hardest passages.</p>
+        <a class="res-link" href="http://pianosage.blogspot.com/2012/03/performance-and-practice-notes.html" target="_blank" rel="noopener">Read on Piano Sage &rarr;</a>
+      </div>
+
+      <div class="resource-card">
+        <span class="res-tag lesson">Discussion</span>
+        <h4>Piano Street — Op. 23 Fingering Forum</h4>
+        <p>Active discussion thread where pianists share specific fingering solutions for Op. 23 passages. See what other intermediate and advanced players have found works for their hands.</p>
+        <a class="res-link" href="https://www.pianostreet.com/smf/index.php?topic=63624.0" target="_blank" rel="noopener">Read discussion &rarr;</a>
+      </div>
+
+      <div class="resource-card">
+        <span class="res-tag lesson">Reference</span>
+        <h4>Wikipedia — Prelude in B♭ major</h4>
+        <p>Background on the composition history, structure, and notable recordings. Good starting point for understanding the piece's place in Rachmaninoff's output.</p>
+        <a class="res-link" href="https://en.wikipedia.org/wiki/Prelude_in_B-flat_major_(Rachmaninoff)" target="_blank" rel="noopener">Read on Wikipedia &rarr;</a>
+      </div>
+    </div>
+
+    <div class="callout green" style="margin-top:28px;">
+      <strong>Score annotation tip:</strong> Print the IMSLP score and use a pencil (never pen!) to write in
+      the fingerings from this guide. Circle any stretches wider than your hand. Mark pedal changes with a
+      bracket below the staff. A well-annotated score is your most valuable practice tool.
+    </div>
+  </div>
+</section>
+
+<!-- ── DOWNLOADS ── -->
+<section id="downloads">
+  <div class="container">
+    <div class="section-label">Printable Resources</div>
+    <h2>PDF Guides &amp; References</h2>
+    <p>
+      Download these printable guides to keep at the piano. They summarize the key fingerings
+      and practice methods from this page in a compact, annotation-ready format.
+    </p>
+
+    <div class="download-grid">
+      <div class="dl-card">
+        <div class="dl-icon">🎼</div>
+        <h4>Fingering Reference Guide</h4>
+        <p>Optimal fingerings for every major passage, organized by section. Print and annotate your score with these recommendations.</p>
+        <a href="fingering-reference.pdf" class="btn-dl" download>View PDF</a>
+      </div>
+      <div class="dl-card">
+        <div class="dl-icon">📋</div>
+        <h4>Part-Task Practice Workbook</h4>
+        <p>A structured daily practice log with checkboxes for each part-task step. Track your progress week by week.</p>
+        <a href="practice-workbook.pdf" class="btn-dl" download>View PDF</a>
+      </div>
+      <div class="dl-card">
+        <div class="dl-icon">💡</div>
+        <h4>Awkward Fingering Quick Reference</h4>
+        <p>One-page cheat sheet of the top 10 fingering tips for this prelude. Keep it on the music stand.</p>
+        <a href="fingering-tips.pdf" class="btn-dl" download>View PDF</a>
+      </div>
+    </div>
+
+    <div class="callout" style="margin-top:32px;">
+      <strong>Score edition recommendation:</strong> Use the <em>Boosey &amp; Hawkes</em> or <em>Muzyka</em> editions
+      for the most reliable text. The Peters edition has some editorial fingerings that may not suit intermediate hands.
+      Always treat any printed fingering as a suggestion — adapt freely to your own hand geometry.
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="ornament">✦</div>
+  <p>Sergei Rachmaninoff &middot; Préludes Op. 23 &middot; No. 2 in B♭ major &middot; Maestoso</p>
+  <p style="margin-top:6px; color: #5a4a38;">Technique &amp; Fingering Guide · For educational use</p>
+</footer>
+
+<script>
+  // ── TAB SWITCHING ──
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const target = this.dataset.tab;
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+      this.classList.add('active');
+      document.getElementById('tab-' + target).classList.add('active');
+    });
+  });
+
+  // ── COLLAPSIBLE ──
+  function toggleCollapse(btn) {
+    btn.classList.toggle('open');
+    const content = btn.nextElementSibling;
+    content.classList.toggle('open');
+  }
+
+  // ── ACTIVE NAV ──
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('nav a');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navLinks.forEach(link => {
+          link.classList.toggle('active', link.getAttribute('href') === '#' + entry.target.id);
+        });
+      }
+    });
+  }, { rootMargin: '-40% 0px -50% 0px' });
+
+  sections.forEach(s => observer.observe(s));
+
+  // ── SMOOTH SCROLL ──
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+</script>
+</body>
+</html>
